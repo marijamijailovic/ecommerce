@@ -19,10 +19,13 @@ public class Users {
   @Id
   @GenericGenerator(name = "uuid2", strategy = "uuid2")
   @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "uuid2")
+  @Column(length = 36, nullable = false, updatable = false)
   private UUID id;
 
   @Temporal(TemporalType.TIMESTAMP)
+  @Column(name = "created", nullable = false, insertable = false)
   private Date created;
 
+  @Column(name = "email", nullable = false)
   private String email;
 }

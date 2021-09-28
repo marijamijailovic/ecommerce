@@ -20,9 +20,11 @@ import java.util.UUID;
 public class Orders {
 
   @Id
+  @Column(length = 36, nullable = false, updatable = false)
   private UUID id;
 
   @Temporal(TemporalType.TIMESTAMP)
+  @Column(name = "created", nullable = false, insertable = false)
   private Date created;
 
   @ManyToOne
